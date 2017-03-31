@@ -1,5 +1,6 @@
 var router = require('express').Router();
 router.use('/', require('./users'));
+
 router.post('/users', function(req, res, next){
   var user = new User();
 

@@ -60,5 +60,4 @@ router.put('/user', auth.required, function(req, res, next){
     });
   }).catch(next);
 
-
 module.exports = router;
