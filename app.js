@@ -38,6 +38,10 @@ if(isProduction){
   mongoose.set('debug', true);
 }
 
+require('./models/User');
+require('./config/passport');
+
+
 app.use(require('./routes'));
 
 /// catch 404 and forward to error handler
@@ -75,6 +79,6 @@ app.use(function(err, req, res, next) {
 });
 
 // finally, let's start our server...
-var server = app.listen( process.env.PORT || 3000, function(){
+var server = app.listen( process.env.PORT || 3030, function(){
   console.log('Listening on port ' + server.address().port);
 });
