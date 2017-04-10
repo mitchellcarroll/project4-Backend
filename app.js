@@ -10,6 +10,7 @@ var fs = require('fs'),
     errorhandler = require('errorhandler'),
     mongoose = require('mongoose');
 
+
 var isProduction = process.env.NODE_ENV === 'production';
 
 // Create global app object
@@ -39,6 +40,8 @@ if(isProduction){
 }
 
 require('./models/User');
+require('./models/Article');
+require('./models/Comment');
 require('./config/passport');
 
 
