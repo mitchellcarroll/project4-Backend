@@ -3,7 +3,7 @@ var secret = require('../config').secret;
 
 
 function getTokenFromHeader(req){
-  if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Token'){
+  if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Token') {
     return req.headers.authorization.split(' ')[1];
   }
 
@@ -11,7 +11,7 @@ function getTokenFromHeader(req){
 }
 
 var auth = {
-  require: jwt({
+  required: jwt({
     secret: secret,
     userProperty: 'payload',
     getToken: getTokenFromHeader
